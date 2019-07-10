@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load blog_tags %}
+{% load humanize %}
+{% get_posts_pic as posts_pic %}
+
+{% block main %}
+
+<!-- 当前导航 start -->
+<div class="container-fluid border bd-default p-2 bg-white article_list">
+	<h6 class="m-1">{{ page_title }}：<strong>{{ archive_name }}</strong></h6>
+</div>
+<!-- 当前导航 end -->
+
+<!-- 文章列表 start -->
+
+{% for post in post_list %}
+<div class="container-fluid border bd-default mt-2 bg-white article_list">
+	<div class="row p-2">
+		<div class="cell-md-3 p-0">
+			<!--a href="{{ post.get_absolute_url }}" title="阅读全文" target="_blank"><img class="article-pic" src="{% static 'blog/images/1.jpg' %}" style="max-width:100%"></a-->
+			<a href="{{ post.get_absolute_url }}" title="阅读全文" target="_blank"><img class="article-pic" src="{% static 'blog/images/' %}{{ posts_pic | random }}" style="max-width:100%"></a>
+		</div>
+		<div class="cell-md-9 p-1">
+			<h5 class="mt-0 ml-0 mr-0 mb-2">
+				<span class="_cat mr-3 bg-lightgreen p-1">
+					<span class="text-white"><a href="{% url 'blog:category' post.category.pk %}" class="text-white">{{ post.category.name }}</a></span>
+					<div class="_info bg-lightgreen"></div>
+				</span>
+				<strong><a href="{{ post.get_absolute_url }}" title="阅读全文" target="_blank">{{ post.title }}</a></strong>
+			</h5>
+			<hr>
+			<p class="mt-1">
+				{{ post.excerpt|safe }}
+			</p>
+		</div>
+		<div class="cell-md-12 p-0">
+			<p class="d-flex flex-justify-end">
+				<small class="text-gray">
+					<i class="fas fa-clock"></i> {{ post.created_time | naturaltime }}&nbsp;&nbsp;&nbsp;&nbsp;
+					<i class="fas fa-eye"></i> {{ post.views }}&nbsp;&nbsp;&nbsp;&nbsp;
+					<i class="fas fa-comments"></i> {{ post.comment_set.count }}
+					{%if post.tags.all %}
+					&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-tags"></i> 									
+					{% for tag in post.tags.all %}
+					<a href="{% url 'blog:tag' tag.pk %}">{{ tag.name }} </a>
+					{% endfor %}
+					{% endif %}
+					
+					{%if post.series %}
+					&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-tags"></i>
+					<a href="{% url 'blog:series' post.series.pk %}">{{ post.series.name }} </a>
+					{% endif %}
+				</small>
+			</p>
+		</div>
+	</div>
+</div>
+{% empty %}
+<div class="container-fluid border bd-default mt-2 bg-white article_list p-2">
+	<div><strong>暂无文章</strong></div>
+</div>
+{% endfor %}
+<!-- 文章列表 end -->
+
+
+<!-- 分页 start -->
+<div class="article_list">
+	<ul class="pagination primary mt-2 flex-justify-center">
+	{% if is_paginated %}
+		{% if page_obj.has_previous %}
+			<li class="page-item"><a class="page-link" href="?{{ page_obj.previous_page_number.querystring }}">上一页</a></li>
+		{% else %}
+			<li class="page-item no-hover"><a class="page-link">上一页</a></li>
+		{% endif %}
+		
+		{% for page in page_obj.pages %}
+			{% if page %}
+				{% ifequal page page_obj.number %}
+				<li class="page-item active no-link"><a class="page-link" href="#">{{ page }}</a></li>
+				{% else %}
+					<li class="page-item"><a class="page-link" href="?{{ page.querystring }}">{{ page }}</a></li>
+				{% endifequal %}
+			{% else %}
+				<li class="page-item no-link"><a class="page-link">...</a></li>
+			{% endif %}
+		{% endfor %}
+		
+		{% if page_obj.has_next %}
+			<li class="page-item"><a class="page-link" href="?{{ page_obj.next_page_number.querystring }}">下一页</a></li>
+		{% else %}
+			<li class="page-item no-hover"><a class="page-link">下一页</a></li>
+		{% endif %}
+	{% else %}
+		<li class="page-item no-hover"><a class="page-link">上一页</a></li>
+		<li class="page-item active no-link"><a class="page-link" href="#">1</a></li>
+		<li class="page-item no-hover"><a class="page-link">下一页</a></li>
+	{% endif %}
+	</ul>
+</div>
+<!-- 分页 end -->
+	
+{% endblock main %}

@@ -1,0 +1,138 @@
+
+.markdown_content * {
+  color:#3e3e3e;
+}
+  
+.markdown_content p {
+  letter-spacing: 1px !important;
+  line-height: 1.7 !important;
+  min-height: 1em !important;
+  box-sizing: border-box !important;
+  word-wrap: break-word !important;
+  text-align: justify;
+  margin: 20px 0 !important;
+}
+
+.markdown_content blockquote {
+	border-left: 10px solid rgba(128,128,128,0.175);
+	background-color: rgba(128,128,128,0.1);
+	padding: 13px 15px !important;
+	margin: 0px;
+}
+
+.markdown_content blockquote p {
+  color: #898989;
+  margin: 0px;
+}
+
+.markdown_content strong {
+	font-weight: blod;
+	color: black;
+}
+
+.markdown_content body {
+  font-size: 15px;
+}
+
+.markdown_content pre {
+  background-color: #f1f1f1;
+  border-radius: 0px;
+  word-wrap: break-word;
+  padding: 12px 13px;
+  font-size: 13px;
+  color: #898989;
+}
+
+.markdown_content h1 {
+	word-break: break-all !important;
+	margin: 20px 0;
+	line-height: 1.2;
+	text-align: left;
+	font-weight: bold;
+	padding-left: 10px;
+	border-left: 8px solid #71BA51 !important;
+	font-size: 26px !important;
+}
+
+.markdown_content h2 {
+	word-break: break-all !important;
+	margin: 20px 0;
+	line-height: 1.2;
+	text-align: left;
+	font-weight: bold;
+	padding-left: 10px;
+	border-left: 6px solid #71BA51 !important;
+	font-size: 24px !important;
+}
+
+.markdown_content h3 {
+	word-break: break-all !important;
+	margin: 20px 0;
+	line-height: 1.2;
+	text-align: left;
+	font-weight: bold;
+	padding-left: 10px;
+	border-left: 4px solid #71BA51 !important;
+	font-size: 22px !important;
+}
+
+.markdown_content h4 {
+	word-break: break-all !important;
+	margin: 20px 0;
+	line-height: 1.2;
+	text-align: left;
+	font-weight: bold;
+	padding-left: 10px;
+	border-left: 4px solid #71BA51 !important;
+	font-size: 20px !important;
+}
+
+.markdown_content h5 {
+	word-break: break-all !important;
+	margin: 20px 0;
+	line-height: 1.2;
+	text-align: left;
+	font-weight: bold;
+	padding-left: 10px;
+	border-left: 4px solid #71BA51 !important;
+	font-size: 18px !important;
+}
+
+.markdown_content h6 {
+	word-break: break-all !important;
+	margin: 20px 0;
+	line-height: 1.2;
+	text-align: left;
+	font-weight: bold;
+	padding-left: 10px;
+	border-left: 4px solid #71BA51 !important;
+	font-size: 16px !important;
+}
+
+.markdown_content a {
+  color: #4183C4 !important;
+  text-decoration: none !important;
+}
+
+.markdown_content ul, ol {
+  padding-left: 10px;
+}
+
+.markdown_content li {
+  line-height: 24px;
+}
+
+.markdown_content hr {
+	height: 4px;
+	padding: 0;
+	margin: 16px 0;
+	background-color: #e7e7e7;
+	border: 0 none;
+	overflow: hidden;
+	box-sizing: content-box;
+	border-bottom: 1px solid #ddd;
+}
+
+.markdown_content code {
+  color: #a71d5d;
+}

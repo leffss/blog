@@ -14,21 +14,25 @@
 
 # 效果
 ### 首页
-
+![效果](https://github.com/leffss/blog/blob/master/uploads/1.png?raw=true)
+![效果](https://github.com/leffss/blog/blob/master/uploads/2.png?raw=true)
 
 ### 文章详情
-
+![效果](https://github.com/leffss/blog/blob/master/uploads/3.png?raw=true)
+![效果](https://github.com/leffss/blog/blob/master/uploads/4.png?raw=true)
 
 ### 评论
-
+![效果](https://github.com/leffss/blog/blob/master/uploads/5.png?raw=true)
 
 ### 搜索
-
+![效果](https://github.com/leffss/blog/blob/master/uploads/6.png?raw=true)
 
 ### 手机浏览效果
-
+![效果](https://github.com/leffss/blog/blob/master/uploads/7.png?raw=true)
+![效果](https://github.com/leffss/blog/blob/master/uploads/8.png?raw=true)
 
 ### 后台管理
+![效果](https://github.com/leffss/blog/blob/master/uploads/9.png?raw=true)
 
 
 # TODO

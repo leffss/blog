@@ -35,14 +35,9 @@ urlpatterns = [
     url(r'', include('comments.urls')),
     # 记得在顶部引入 AllPostsRssFeed
     url(r'^rss$', AllPostsRssFeed(), name='rss'),
-    # url(r'^search/', include('haystack.urls')),
     url(r'^mdeditor/', include('mdeditor.urls')),
-    # url(r'mpttcomments', include('django_mptt_comments.urls')),
-    # url(r'^captcha/', include('captcha.urls')),
-
     # 网站地图
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
-
 ]
 
 if settings.DEBUG:
